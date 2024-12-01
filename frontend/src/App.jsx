@@ -6,7 +6,7 @@ import Chat from './Chat'
 import { Card,Form,Button,CardContent,Icon,Container,FormField,Divider } from 'semantic-ui-react'
 
 
-const socket = io.connect("http://localhost:3001")
+const socket = io.connect("http://localhost:3000")
 
 function App() {
   const [username,setUsername] = useState("")

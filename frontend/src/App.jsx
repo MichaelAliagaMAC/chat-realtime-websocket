@@ -24,25 +24,24 @@ function App() {
   return (
     <>
     <Container>
-      
       {!showChat? (
       <Card fluid>
-        <CardContent header='Unirme al chat' />
+        <CardContent header='GRUPO DE TRABAJO' />
           <CardContent>
         <Form>
           <FormField>
-            <label>Username:</label>
+            <label>Estudiante:</label>
             <input 
               type="text" 
-              placeholder='Michael...' 
+              placeholder='Nombres y Apellidos' 
               onChange={(e)=> setUsername(e.target.value)}
             />
           </FormField>
           <FormField>
-            <label>Sala:</label>
+            <label>Grupo:</label>
             <input 
               type="text" 
-              placeholder='ID Sala:' 
+              placeholder='N° Grupo' 
               onChange={(e)=> setRoom(e.target.value)}
               />
           </FormField>
@@ -50,7 +49,7 @@ function App() {
         </Form>
           </CardContent>
             <CardContent extra>
-            <Icon name='user' />4 Friends
+            <Icon name='user' />Personal
             </CardContent>
           </Card>
       ):(

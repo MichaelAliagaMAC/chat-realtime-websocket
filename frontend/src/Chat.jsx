@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Button, Card,CardContent,Container,Icon,FormField, Form, Input, List, Message, Divider } from 'semantic-ui-react'
+import {Card,CardContent,Container,Icon,FormField, Form, Message, Divider } from 'semantic-ui-react'
 import ScrollToBottom from 'react-scroll-to-bottom'
 import { Header } from 'semantic-ui-react';
 
@@ -36,14 +36,14 @@ const Chat = ({socket,username,room}) => {
   return (
 <Container>
     <Card fluid>
-        <CardContent header={`Chat en Linea | Sala: ${room}`} />
+        <CardContent header={`Chat de Trabajo | Grupo: ${room}`} />
         <ScrollToBottom>
-            <CardContent style={{ height: '400px', padding: '5px' }}>
+            <CardContent style={{ height: '500px', padding: '20px' }}>
                 {messagesList.map((item, i) => (
                     <span key={i}>
-                        <Message style={{ textAlign: username === item.author ? 'right' : 'left' }} success={username === item.author} color={username === item.author ? 'green' : 'blue'}>
+                        <Message style={{ textAlign: username === item.author ? 'right' : 'left' }} success={username === item.author} color={username === item.author ? 'light blue violet' : 'yellow'}>
                             <Header>{item.message}</Header>
-                            <p> Enviado: <strong>{item.author}</strong> hora: <i>{item.time}</i> </p>
+                            <p> Enviado: <strong> {item.author}</strong> |<i>{item.time}</i> </p>
                         </Message>
                         <Divider></Divider>
                     </span>
@@ -58,13 +58,13 @@ const Chat = ({socket,username,room}) => {
                         <input
                             value={currentMessage}
                             type="text"
-                            placeholder='Mensaje...'
+                            placeholder='Mensaje'
                             onChange={e => setCurrentMessage(e.target.value)}
                             onKeyPress={(e) => {
                                 if (e.key === "Enter") sendMessage()
                             }} />
 
-                        <button type='button' onClick={() => sendMessage()} className='ui teal icon right labeled button'>
+                        <button type='button' onClick={() => sendMessage()} className='ui blue icon right labeled button'>
                             <Icon name='send'></Icon>
                             Enviar
                         </button>

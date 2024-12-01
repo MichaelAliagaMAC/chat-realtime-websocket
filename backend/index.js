@@ -5,7 +5,7 @@ const cors = require("cors")
 const {Server} = require("socket.io")
 const { Socket } = require("net")
 
-app.use(cors())
+app.use(cors());
 
 const server = http.createServer(app)
 
@@ -20,7 +20,7 @@ io.on("connection",(socket)=>{
     console.log(`Usuario actual: ${socket.id}`);
 
     socket.on("join_room",(data)=>{
-        socket.join(data)
+        socket.join(data);
         console.log(`Usuario con id: ${socket.id} se unió a la sala ${data}`);
     })
 
@@ -28,13 +28,11 @@ io.on("connection",(socket)=>{
         socket.to(data.room).emit("receive_message",data);
     })
 
-
-
     socket.on("disconnect",()=>{
-        console.log("Usuario desconectado", socket.id)
+        console.log("Usuario desconectado", socket.id);
     });
-})
+});
 
 server.listen(3001,()=> {
-    console.log("SERVER RUNNING")
-})
+    console.log("SERVER RUNNING");
+});

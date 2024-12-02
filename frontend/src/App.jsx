@@ -3,7 +3,7 @@ import './App.css'
 
 import io from 'socket.io-client'
 import Chat from './Chat'
-import { Card,Form,Button,CardContent,Icon,Container,FormField,Divider } from 'semantic-ui-react'
+import { Card,Form,Button,CardContent,Icon,Container,FormField } from 'semantic-ui-react'
 
 
 const socket = io.connect("http://localhost:3000")

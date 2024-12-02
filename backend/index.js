@@ -36,8 +36,8 @@ app.get('/', (req, res) => {
     res.send('<h1>Puerto Utilizado</h1>');
 });
 
-// Usa la variable de entorno PORT proporcionada por Railway o 3000 como predeterminado
 const port = process.env.PORT || 3000;
 server.listen(port, '::', () => {
     console.log(`Server running at http://localhost:${port}`);
 });
+
